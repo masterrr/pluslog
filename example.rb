@@ -2,15 +2,15 @@ require 'pluslog'
 
 class My
   +def w
-    x()
+    x
   end
 
   +def x
-    y()
+    y
   end
 
-  def y()
-    z()
+  def y
+    z
   end
 
   +def z

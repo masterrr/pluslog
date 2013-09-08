@@ -10,8 +10,9 @@ def nil.+@
   method = klass.instance_method(name)
   klass.send(:define_method, name) do |*args|
     Pluslogger.log "enter #{name}"
-    Pluslogger.new { method.bind(self).call(*args) }
+    res = Pluslogger.new { method.bind(self).call(*args) }
     Pluslogger.log "exit #{name}"
+    res 
   end
 end
 
@@ -29,7 +30,8 @@ class Pluslogger
   def self.new(&block)
     Thread.current[:depth] ||= 0
     Thread.current[:depth] += 1
-    block.call
+    res = block.call
     Thread.current[:depth] -= 1
+    res
   end
 end
