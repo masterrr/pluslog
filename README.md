@@ -35,4 +35,5 @@ puts Pluslogger.get_pretty_trace(Thread.current)
 # | exit x [2013-09-08 16:25:04 +0300]
 # exit w [2013-09-08 16:25:04 +0300]
 ```
-
+## Thanks to
+[Gosha Arinich](http://github.com/goshakkk)
