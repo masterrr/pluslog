@@ -8,9 +8,9 @@ end
 def nil.+@
   klass, name = Thread.current[:method]
   method = klass.instance_method(name)
-  klass.send(:define_method, name) do |*args|
+  klass.send(:define_method, name) do |*args, &block|
     Pluslogger.log "enter #{name}"
-    res = Pluslogger.new { method.bind(self).call(*args) }
+    res = Pluslogger.new { method.bind(self).call(*args, &block) }
     Pluslogger.log "exit #{name}"
     res 
   end

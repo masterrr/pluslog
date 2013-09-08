@@ -3,6 +3,8 @@ pluslog
 
 Ruby simple logger gem
 
+[![Gem Version](https://badge.fury.io/rb/pluslog.png)](http://badge.fury.io/rb/pluslog)
+
 Usage:
 ```ruby
 require 'pluslog'
